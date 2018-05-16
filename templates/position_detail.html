@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block title %}职位详情{% endblock %}
+{% block content %}
+    <div class="position_detail">
+        {% if position %}
+            <div>
+                <h1><a href="{{ position.url }}">{{ position.position_name }}</a></h1>
+                <a class="job_company" href="{% url 'search:company' position.company_name 1 %}">{{ position.company_name }}</a>
+            </div>
+            <div class="job_request">
+                <span class="">薪 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;资：</span>&nbsp;&nbsp;{{ position.salary }}<br/>
+                <span class="">学历要求：</span>&nbsp;&nbsp;{{ position.education }}<br/>
+                <span class="">工作经验：</span>&nbsp;&nbsp;{{ position.work_year }}<br/>
+                <span class="">工作性质：</span>&nbsp;&nbsp;{{ position.job_nature }}<br/>
+                <span class="">发布日期：</span>&nbsp;&nbsp;{{ position.publish_date }}<br/>
+                <span class="">职位类别：</span>&nbsp;&nbsp;{{ position.first_type }} / {{ position.second_type }}
+            </div>
+            <div>
+                <h3>职位描述：</h3>
+            <pre>{{ position.job_detail }}</pre>
+            </div>
+            <div>
+                <h3>工作地址：</h3>
+                <br>
+                <div>{{ position.job_address }}</div>
+            </div>
+        {% else %}
+            <div class="not_found">没有搜索到该职位！！！</div>
+        {% endif %}
+    </div>
+{% endblock %}

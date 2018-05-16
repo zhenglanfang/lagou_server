@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/data_center.css' %}"/>
+    {% block extrajs %}{% endblock %}
+{% endblock %}
+{% block content %}
+    <div class="user_main center clearfix">
+        <div class="left_menu fl clearfix">
+            <h3>数据接口</h3>
+            <ul>
+                <li>
+                    <a href="javascript:;" {% block info %}{% endblock %}>· API文档</a>
+                    <ul class="api_sub_title">
+                        <li><a href="{% url 'api:index' %}" {% block all_position_style %}{% endblock %}>所有职位</a></li>
+                        <li><a href="{% url 'api:api_company_static' %}" {% block company_position_style %}{% endblock %}>公司职位</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;" {% block downlaod %}{% endblock %} style="font-weight: bold">· 数据下载</a>
+                    <ul class="api_sub_title">
+                        <li><a href="{% url 'api:download_static' 'all_positions' %}" {% if all_positions %}class="active" {% endif %}>所有职位</a></li>
+                        <li><a href="{% url 'api:download_static'  'company_positions' %}" {% if company_positions %}class="active" {% endif %}>公司职位</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="right_content fr clearfix">
+            {% block right %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+<span>共（{{ length }}）条</span>
+<br/>
+<br/>
+<table>
+    <tr>
+        <th class="no">编号</th>
+        <th class="position_name">职位名称</th>
+        <th class="salary">薪资</th>
+        <th class="education">学历</th>
+        <th class="work_year">工作经验</th>
+        <th class="job_nature">工作性质</th>
+        <th class="company_name">公司名称</th>
+        <th class="city">城市</th>
+        <th class="district">所在区</th>
+        <th class="job_detail">职位详情</th>
+        <th class="publish_date">发布日期</th>
+    </tr>
+    {% for item in data %}
+        <tr>
+            <td class="no">{{ forloop.counter }}</td>
+            <td class="position_name">{{ item.position_name }}</td>
+            <td class="salary">{{ item.salary }}</td>
+            <td class="education">{{ item.education }}</td>
+            <td class="work_year">{{ item.work_year }}</td>
+            <td class="job_nature">{{ item.job_nature }}</td>
+            <td class="company_name">{{ item.company_name }}</td>
+            <td class="city">{{ item.city }}</td>
+            <td class="district">{{ item.district }}</td>
+            <td class="job_detail">{{ item.job_detail|slice:':30' }}...</td>
+            <td class="publish_date">{{ item.publish_date }}</td>
+        </tr>
+    {% empty %}
+        <tr>
+            <td colspan="11">没有查询到相关职位！</td>
+        </tr>
+    {% endfor %}
+</table>

@@ -1,0 +1,12 @@
+{% extends "search_base.html" %}
+{% load static from staticfiles %}
+{% block title %}职位搜索{% endblock %}
+{% block position %}
+    <div class="sort_bar">
+        <a href="{% url 'search:job' 1 %}?{{ request_params|cut:'&sort=1' }}" class="active">默认</a>
+        <a href="{% url 'search:job' 1 %}?{{ request_params|cut:'&sort=1' }}&sort=1">最新</a>
+        <span class="fr" style="margin-right: 15%;">共 {{ count }} 条</span>
+    </div>
+    {% include 'positions_list_include.html' %}
+    {% include 'pagination_include.html' %}
+{% endblock %}

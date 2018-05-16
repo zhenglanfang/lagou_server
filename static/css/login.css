@@ -1,0 +1,60 @@
+/*登录页面*/
+
+/*top*/
+.login_top{padding:30px 0px 20px 0px ;width: 980px; }
+
+/*中间样式*/
+.login_bg{
+    background: url("/static/images/bg_image.jpg");
+    background-size:100% 100%;
+    height:100%;
+}
+.login_content{width: 980px;height:100%;}
+/*.login_content .login_banner{*/
+    /*height: 480px;*/
+    /*width: 500px;*/
+    /*background: url("/static/images/login_banner.png") left 90px;*/
+    /*background-repeat: no-repeat;*/
+/*}*/
+.login_content .login_slogan{
+    width: 40px;
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 60px;
+}
+/*表单*/
+.login_form{
+    width: 310px;
+    height: 380px;
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 60px 0;
+    margin-right: 32%;
+}
+
+/*input背景图*/
+.form .name_input{
+    background: url("/static/images/icons02.png") no-repeat right -42px;
+}
+.form .pwd_input{
+    background: url("/static/images/icons02.png") no-repeat right -93px;
+}
+.form .verifycode_input{
+    width: 167px
+}
+
+/*验证码图片*/
+#codeimg {
+    cursor: pointer;
+    border: 1px solid #989898;
+    border-left: 0px;
+}
+
+/*底部*/
+.footer{
+    border-top:0px;
+    margin-top: 0px;
+}

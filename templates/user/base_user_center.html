@@ -1,0 +1,22 @@
+{% extends "base_search.html" %}
+{% load static from staticfiles %}
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/user_center.css' %}"/>
+    {% block extrajs %}{% endblock %}
+{% endblock %}
+{% block subtitle %}用户中心{% endblock %}
+{% block content%}
+    <div class="user_main center clearfix">
+        <div class="left_menu fl clearfix">
+            <h3>用户中心</h3>
+			<ul>
+				<li><a href="{% url 'user:user_info' %}" {% block info %}{% endblock %}>· 个人信息</a></li>
+				<li><a href="{% url 'order:user_order' %}" {% block order %}{% endblock %}>· 全部订单</a></li>
+				<li><a href="{% url 'user:user_address' %}"  {% block address %}{% endblock %}>· 收货地址</a></li>
+			</ul>
+        </div>
+        <div class="right_content fr clearfix">
+            {% block right %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

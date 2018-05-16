@@ -1,0 +1,51 @@
+{%load static from staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/basic.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/public.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}"/>
+</head>
+<body>
+{#    <div class="login_top center">#}
+{#        <a href=""><img src="{% static 'images/logo02.png' %}"></a>#}
+{#    </div>#}
+    <div class="login_bg">
+       <div class="reg_content center">
+        <div class="reg_right fr">
+            <div class="form_title"><span>用户注册</span><a href="{% url 'user:login' %}">登录</a></div>
+            <div class="form">
+                <form action="{%url 'user:register'%}" method="post">
+                    {% csrf_token %}
+                    <label>用户名：</label>
+                    <input type="text" id="username" name="username" placeholder="手机号"/>
+                    <span class="error" id="check_name"></span>
+                    <label>密码：</label>
+                    <input type="password" id="userpwd" name="userpwd" placeholder="6到15位字母、数字、字符"/>
+                    <span class="error"></span>
+                    <label>确认密码：</label>
+                    <input type="password" id="ackpwd" name="ackpwd"/>
+                    <span class="error"></span>
+                    <label>邮箱：</label>
+                    <input type="text" id="email" name="email"/>
+                    <span class="error">{{ context.err }}</span>
+                    <input type="submit" class="button" name="register" id="register" value="注册"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/public.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/register.js' %}"></script>
+</body>
+</html>
+
+
+
+
+

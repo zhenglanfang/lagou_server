@@ -1,0 +1,388 @@
+/*设置字体样式*/
+body {
+    font-family: 微软雅黑;
+    background-color: white;
+    color: #4a4646;
+    height: 100%;
+    margin:0;padding:0
+}
+
+/*设置宽度*/
+.width1200 {
+    width: 1200px;
+}
+
+/*设置a的样式*/
+a:hover {
+    color: #49aa36
+}
+
+a {
+    color: #4a4646
+}
+
+/*登录注册的表单*/
+.form .button {
+    cursor: pointer;
+}
+
+.form_title {
+    height: 60px;
+    border-bottom: 1px solid #989898;
+    line-height: 60px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-indent: 20px;
+}
+
+.form_title span {
+    color: #a8a8a8;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.form_title a {
+    color: #58a338;
+    font-size: 16px;
+    font-weight: 500;
+    /*text-indent: 2em;*//*margin-left:
+    100px;*/
+    padding-right: 25px;
+    display: block;
+    float: right;
+    background: url("../images/icons02.png") no-repeat right 23px;
+}
+
+.form input {
+    width: 100%;
+    height: 35px;
+    font-size: 15px;
+    border: 1px solid #989898;
+    /*border-radius:
+    2px;*/
+    text-indent: 5px;
+}
+
+.form span {
+    height: 30px;
+    margin-left: 5px;
+    line-height: 30px;
+    display: block;
+    color: red;
+    font-size: 15px;
+}
+
+.form div {
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.form .checkbox_input {
+    width: 25px;
+    height: 17px;
+    margin-top: 2px;
+}
+
+.form form .button {
+    width: 100%;
+    border: 0px;
+    color: white;
+    font-size: 20px;
+    background-color: #48aa35;
+}
+
+.form .button:hover {
+    background-color: #6eb102;
+}
+
+/* 顶部样式 */
+.header_bar {
+    background-color: #f7f7f7;
+    font-size: 13px;
+    height: 29px;
+    border-bottom: 1px solid #dddddd;
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+}
+
+.header {
+    line-height: 29px;
+}
+
+.header .header_nav span {
+    margin: 0px 10px;
+}
+
+.header_nav {
+    margin-right: 8%;
+}
+
+.header_nav b {
+    color: #ff8800;
+}
+
+/* 底部样式 */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 30px;
+    font-size: 14px;
+    border-top: 2px solid #48aa35;
+}
+
+.footer span {
+    margin: 0px 10px;
+}
+
+.footer p {
+    color: #5d5d5d;
+    margin-top: 10px;
+}
+
+/**/
+.tab-wrapper {
+    font-size: 15px;
+    margin-bottom: 10px;
+    height: 30px;
+}
+
+.tab-wrapper a {
+    color: black;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 13px;
+    float: left;
+}
+
+.tab-wrapper .active {
+    background-color: #48AA35;
+    color: #fff;
+}
+
+/*搜索框样式*/
+.search {
+    width: 1200px;
+    height: 150px;
+    margin-top: 30px;
+}
+.search .search_img {
+    height: 63px;
+    line-height: 63px;
+    font-size: 18px;
+    margin: 20px 0px 0px 200px;;
+}
+.search_img a {
+    /*width: 150px;*/
+    height: 139px;
+    float: left;
+}
+.search_img span {
+    margin: 0px 20px;
+}
+.search_con {
+    margin-top: 45px;
+    margin-right: 8%;
+}
+.search_con .input_search {
+    width: 600px;
+    height: 36px;
+    background: url("../images/icons.png") no-repeat 5px -338px;
+    text-indent: 30px;
+    border: 1px solid #48AA35;
+    font-size: 1em;
+}
+.search_con .input_btn {
+    width: 100px;
+    height: 38px;
+    background-color: #48AA35;
+    border: 0px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+.search_filter {}
+.search_filter ul {
+    margin-left: 20%;
+    margin-right: 10%;
+}
+.search_filter ul li {
+    line-height: 50px;
+}
+.search_filter ul li span {
+    border-left: 5px solid #39a93e;
+    padding-left: 5px;
+}
+.search_filter ul li label {
+    margin-left: 5px;
+    margin-right: 25px;
+}
+.search_filter ul li input {
+
+}
+.search_filter .city {
+    display: inline;
+}
+.search_filter .more_city {
+    display: none;
+    margin-left: 93px;
+}
+.get_more_type {
+    color: #6eb102;
+}
+
+/*职位列表*/
+.position_li {
+    position: relative;
+    color: #555;
+    border: 1px solid #ededed;
+    margin-top: 18px;
+    height: 120px;
+    border-top: 2px solid #39a93e;
+    background-color: #f8f6f6;
+}
+
+.positions_list ul {
+    margin-left: 20%;
+    margin-right: 10%;
+}
+
+.position_li .position {
+    float: left;
+    width: 60%;
+    padding-left: 7%;
+    padding-top: 2%;
+}
+
+.position_li .company {
+    float: right;
+    width: 25%;
+    padding-left: 8%;
+    padding-top: 5%;
+}
+
+.position_li .company a {
+    color: #ff8800;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.position a h3 {
+    float: left;
+    font-size: 16px;
+}
+
+.position .p_bot {
+    clear: both;
+    margin-top: 10px;
+}
+
+.position .p_bot .money {
+    margin-right: 10px;
+    color: #ff8800;
+}
+
+.add {
+    color: #28bd0b;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*分页，页脚*/
+.pagenation {
+    height: 40px;
+    margin: 30px auto;
+    text-align: center;
+    /*line-height: 40px;*/
+    font-size: 0px;
+}
+
+.pagenation a {
+    display: inline-block;
+    font-size: 12px;
+    background-color: #eeeced;
+    padding: 5px 10px;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+
+.pagenation .active {
+    color: #f5f6f4;
+    background-color: #49aa36;
+    font-weight: bold;
+}
+
+/*排序*/
+.sort_bar {
+    height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    background-color: #f0fdec;
+    margin-left: 20%;
+    margin-right: 10%;
+}
+
+.sort_bar a {
+    color: black;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 20px;
+    float: left;
+}
+
+.sort_bar .active {
+    background-color: #37ab40;
+    color: #fff;
+}
+
+/*job详情*/
+.position_detail {
+    margin-top: 60px;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 3%;
+    padding-left: 10%;
+}
+
+.position_detail div h1 {
+    display: inline-block;
+    font-size: 27px;
+}
+
+.position_detail .job_company {
+    margin-left: 15%;
+    color: #ff8800;
+    font-size: 18px
+}
+
+.position_detail .job_request {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.position_detail .job_request span {
+    color: #7c8084;
+    line-height: 35px;
+}
+
+.position_detail pre {
+    font-size: 16px;
+    font-family: 微软雅黑;
+}
+
+.positions_list .not_found {
+    margin-top: 20px;
+}
+
+.company_positions{
+    margin-left: 20%;
+}
+
+
+
+

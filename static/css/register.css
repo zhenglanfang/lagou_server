@@ -1,0 +1,57 @@
+.reg_content {
+    /*width: 680px;*/
+    height: 573px;
+}
+
+.reg_left {
+    width: 250px;
+    height: 100%;
+    text-align: right;
+}
+
+.reg_left p {
+    color: #48aa35;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.reg_right {
+    width: 360px;
+    height: 400px;
+    color: #898989;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: white;
+    margin-top: 60px;
+    padding-bottom: 30px;
+    margin-right: 32%;
+}
+
+.form {
+    font-size: 0px;
+}
+
+.reg_right input {
+    width: 276px;
+}
+
+.reg_right label {
+    display: inline-block;
+    width: 80px;
+    font-size: 15px;
+}
+
+.reg_right form span {
+    margin-left: 90px;
+}
+
+.reg_right .agree_label {
+    width: 280px;
+    font-size: 14px;
+}
+
+.reg_right .agree_error {
+    margin-left: 0px;
+}

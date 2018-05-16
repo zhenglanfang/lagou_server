@@ -1,0 +1,125 @@
+/*用户中心：left-menu*/
+.user_main {
+    margin-top: 5%;
+    width: 1200px;
+    /*background: url("../images/left_bg.jpg") repeat-y;*/
+}
+
+.left_menu {
+    width: 200px;
+    text-align: center;
+    text-align: left;
+    text-indent: 2em;
+}
+
+.left_menu h3 {
+    color: #8e8e8e;
+    height: 45px;
+    line-height: 45px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.left_menu li {
+    /*height: 45px;*/
+    line-height: 45px;
+}
+
+.left_menu li .active {
+    color: #49AA36;
+    font-weight: bold;
+}
+
+.left_menu .api_sub_title li {
+    line-height: 23px;
+    font-size: 14px;
+    margin-left: 15%;
+}
+
+.right_content {
+    margin-left: 20px;
+    width: 980px;
+}
+
+.view_list pre {
+    background-color: #f7f7f7;
+    padding-left: 3%;
+    padding-top: 1%;
+    font-family: 'Courier New';
+}
+
+/*中心：right*/
+.right_content h3 {
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+    /*font-weight: 500;*/
+}
+
+.right_content .info {
+    line-height: 35px;
+    font-size: 14px;
+    background-color: #f7f7f7;
+    padding: 10px 0 10px 25px;
+}
+
+.info li span {
+    font-weight: bold;
+}
+
+/*下载表单*/
+.info form .api_btn {
+    cursor: pointer;
+    padding: 2px 10px;
+}
+
+.info form select {
+    width: 8%;
+    padding: 2px;
+    border-radius: 3px;
+    font-family: inherit;
+    border: 1px solid rgba(0, 0, 0, 0.19);
+}
+
+.info form input {
+    padding: 3px;
+    border-radius: 3px;
+    /* float: left; */
+    font-size: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.19);
+}
+
+/*数据预览*/
+.view_list table {
+    border-collapse: collapse;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+}
+
+.view_list table, td, th {
+    border: 1px solid #a7a2a2;
+}
+
+.view_list table .no {
+    width: 3.3%;
+}
+
+.view_list table .education, .city {
+    width: 4%;
+}
+
+.view_list table .salary, .work_year, .district {
+    width: 6%;
+}
+
+.view_list table .publish_date {
+    width: 9%;
+}
+
+.view_list table .job_detail {
+    text-align: left;
+}
+
+
+

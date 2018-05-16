@@ -1,0 +1,63 @@
+{% extends "data/data_base.html" %}
+{% load static from staticfiles %}
+{% block title %}数据API{% endblock %}
+{% block info %}class="active"{% endblock %}
+{% block company_position_style %}class="active"{% endblock %}
+{% block right %}
+    <h3>获取公司数据API</h3>
+    <div class="info">
+        <ul>
+            <li>请求方式：<span>GET</span></li>
+            <li>请求URL：<span>{{ request.get_host }}/api/company/{company_name}</span>
+            </li>
+            <li>参数说明：<span>company_name: 公司名称</span>
+                <span style="    display: block;margin-left: 68px;">
+                    key: 密钥 &nbsp;&nbsp;&nbsp;&nbsp;你的密钥是：{{ key }}
+                </span>
+            </li>
+        </ul>
+    </div>
+    <h3>响应内容</h3>
+    <div class="view_list">
+        <span>失败：</span>
+        <pre>
+{
+    "status": "error",
+    "data": "Key error"
+}
+        </pre>
+        <span>成功：</span>
+        <pre>
+{
+  "data": [
+    {
+      "position_name": "资深后端研发（国际物流）",
+      "salary": "25k-45k",
+      "city": "上海",
+      "company_name": "小红书",
+      "district": "黄浦区",
+      "publish_date": "2018-01-09",
+      "work_year": "3-5年",
+      "job_nature": "全职",
+      "education": "本科",
+      "job_detail": "核心目标：让商品能够高效，安全的送达用户
+            工作职责:
+            1. 管控业务需求，确保ROI
+            2. 优化团队，提升团队整体战斗力，帮助团队成员迅速成长
+            3. 通过技术创新，优化技术架构，推动业务发展，提升用户的物流体验
+            4. 提升团队代码质量，完善子系统监控，保障各子系统的稳定性
+            任职资格:
+            1. 有3年以上工作经验，熟悉java, python, ruby中的一种语言（语言不是什么问题）
+            2. 全日制计算机软件或相关专业本科以上学历；
+            3. 具备多人(15+以上)，中大型项目的协作经验
+            4. 工作积极主动认真负责，具备良好的沟通能力与独立工作能力，有良好的代码风格和编程习惯
+            5. 熟悉缓存、消息队列、任务调度等相关技术；
+            6. 擅长数据库设计，熟悉关系型数据库 如 mysql , mongo
+            7. 熟悉Linux操作、熟悉git、shell、nginx
+            8. 具备电商或物流配送，订单调度业务经验者优先",
+    },...
+  ]
+}
+        </pre>
+    </div>
+{% endblock %}

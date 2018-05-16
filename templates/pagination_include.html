@@ -1,0 +1,28 @@
+<div class="pagenation">
+    <span style="font-size: 11px;">{{ count }} 条  共 {{ num_pages }} 页</span>
+    {% if num_pages != 1 %}
+        {% if pages.has_previous %}
+            <a href="{% url page_url 1 %}?{{ request_params }}">首页</a>
+            <a href="{% url page_url page_now|add:'-1' %}?{{ request_params }}">上一页</a>
+        {% endif %}
+        {% for num in page_range %}
+            {% if num == page_now %}
+                <a href="{% url page_url num %}?{{ request_params }}" onclick="return false;" class="active">
+                    {{ num }}
+                </a>
+                {% comment %}{% elif num == 6%}
+                        <a href="javascript:;">...</a>{% endcomment %}
+            {% else %}
+                <a href="{% url page_url num %}?{{ request_params }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if pages.has_next %}
+            <a href="{% url page_url page_now|add:'1' %}?{{ request_params }}" page="{{ page_now|add:'1' }}">
+                下一页
+            </a>
+            <a href="{% url page_url num_pages %}?{{ request_params }}" page="{{ num_pages }}">
+                尾页
+            </a>
+        {% endif %}
+    {% endif %}
+</div>

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block title %}数据分析{% endblock %}
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/data_center.css' %}"/>
+    <script type="application/javascript" src="{% static 'js/echarts.js' %}" ></script>
+    <script type="application/javascript" src="{% static 'js/statiatics.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="user_main center clearfix">
+        <div class="left_menu fl clearfix">
+            <h3>数据分析</h3>
+            <ul>
+                <li>
+                    <a href="javascript:;" id="positions_rank">· 职位排名</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="position_type_distribute">· 职位分布</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="city_distribute">· 城市职位分布</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="position_city_distribute">· 职位城市分布</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="education_distribute">· 学历要求分布</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="second_type_salary">· 职位平均薪资</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="first_type_salary">· 热门职位平均薪资</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="city_salary">· 城市平均薪资</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="education_salary">· 不同学历平均薪资</a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="work_year_salary">· 工作经验平均薪资</a>
+                </li>
+            </ul>
+        </div>
+        <div class="right_content fr clearfix" id="container" style="height: 500px">
+            {% block right %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

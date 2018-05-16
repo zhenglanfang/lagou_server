@@ -1,0 +1,65 @@
+{% extends "data/data_base.html" %}
+{% load static from staticfiles %}
+{% block title %}数据API{% endblock %}
+{% block info %}class="active"{% endblock %}
+{% block all_position_style %}class="active"{% endblock %}
+{% block right %}
+    <h3>获取某时间段的数据API</h3>
+    <div class="info">
+        <ul>
+            <li>请求方式：<span>GET</span></li>
+            <li>请求URL：<span>{{ request.get_host }}{% url 'api:api_job' %}</span></li>
+            <li>参数说明：<span>start_date: 开始时间</span>
+                <span style="    display: block;margin-left: 68px;">
+                    end_date: 结束时间<br>
+                    key: 密钥 &nbsp;&nbsp;&nbsp;&nbsp;你的密钥是：{{ key }}
+                </span>
+            </li>
+        </ul>
+    </div>
+    <h3>响应内容</h3>
+    <div class="view_list">
+        <span>失败：</span>
+        <pre>
+{
+    "status": "error",
+    "data": "Unknown datetime string format, unable to parse: 2018-3-"
+}
+        </pre>
+        <span>成功：</span>
+        <pre>
+{
+  "data": [
+    {
+      "education": "本科",
+      "publish_date": "2018-04-02",
+      "job_nature": "全职",
+      "district": "石景山区",
+      "company_name": "井立通",
+      "position_name": "项目经理",
+      "salary": "15k-22k",
+      "work_year": "3-5年",
+      "city": "北京",
+      "job_detail": "工作内容：
+            1. 负责遵循公司标准项目管理流程，成功交付部门级/公司级技术类项目，并保证业务方满意度。
+            2. 负责与项目相关部门沟通协调，解决项目问题，推进项目执行。
+            3. 负责与技术团队一同规划、建设，并管理项目集，梳理项目间关系。
+            4. 负责部门内项目管理体系建设。
+            5. 负责向管理层定期汇报项目状态，及跟进项目问题风险。
+            任职资格：
+            1. 3年或以上软件/互联网/IT行业工作经验，2年以上项目经理或同职责岗位任职经历。
+            2. 全日制大学本科及以上学历。
+            3. 具有在正规项目管理体系下独立行使项目经理的职责并完成预定目标的工作经历。
+            4. 具有卓越的项目计划、组织、领导、控制能力，能够通过出色的项目管理来达成预定的项目目标，确保业务方满意。
+            5. 具有优秀的沟通能力，能够良好的协调部门间协作。
+            6. 对互联网/电商类业务及相关技术具有浓厚兴趣及钻研精神。
+            7. 了解互联网/电商基本业务架构或技术架构者优先考虑。
+            8. 具有软件开发，尤其是互联网相关应用开发经验者优先考虑。
+            9. 具有PMP认证或其它项目管理认证优先考虑。
+            10. 具有Scrum敏捷项目经验者优先考虑。"
+    },...
+  ]
+}
+        </pre>
+    </div>
+{% endblock %}

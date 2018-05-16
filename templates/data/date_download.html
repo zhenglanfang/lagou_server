@@ -1,0 +1,43 @@
+{% extends "data/data_base.html" %}
+{% load static from staticfiles %}
+{% block extrajs %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/search_hint.css' %}">
+    <script type="application/javascript" src="{% static 'js/autocomplete.js' %}"></script>
+    <script type="application/javascript" src="{% static 'js/ajax_api_form.js' %}"></script>
+{% endblock %}
+{% block title %}数据下载{% endblock %}
+{% block downlaod %}class="active"{% endblock %}
+{% block right %}
+    <h3>参数选择：</h3>
+    <div class="info">
+        <form method="post" id="api_form" action="{% url 'api:download_position' %}" onkeydown="if(event.keyCode==13){return false;}">
+            {% csrf_token %}
+            <input type="hidden" value="show" name="show">
+            <input type="hidden" value="{{ key }}" name="key">
+            {% if all_positions %}
+                <label>开始时间：</label>
+                <input type="date" name="start_date">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <label>结束时间：</label>
+                <input type="date" name="end_date">
+            {% else %}
+                <div class="autocomplete-container">
+                    <label>公司名称：</label>
+                    <input type="text" autocomplete="off" name="company_name" placeholder="Search" class="autocomplete-input">
+                </div>
+            {% endif %}
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="查询" name="query" class="api_btn" id="submit">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <label>文件类型：</label>
+            <select name="file_type">
+                <option value="json" selected="selected">JSON</option>
+                <option value="xlsx">Excel</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" value="下载" name="download" class="api_btn">
+        </form>
+    </div>
+    <h3>数据预览：</h3>
+    <div class="view_list"></div>
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static from staticfiles %}
+{% block extrastyle %}
+    <script type="text/javascript" src="{% static 'js/search.js' %}"></script>
+{% endblock %}
+{% block content %}
+    <div class="search center">
+        <div class="search_img fl">
+            <a href="{% url 'search:job' 1 %}"><img src="{% static 'images/logo.jpg' %}" style="border-radius: 10%;height:  80%;"></a>
+        </div>
+        <div class="search_con fr">
+            <form method="get" action="{% url 'search:job' 1 %}" id="search_form">
+                <input class="input_search fl" name="key_word" laceholder="搜索职位" type="text">
+                <input class="input_btn" value="搜索" type="submit">
+            </form>
+        </div>
+    </div>
+    <div class="search_filter clearfix">
+        <ul>
+            <li>
+                <span>工作地点：</span>
+                <input type="checkbox" class="first" name="city" value="" form="search_form"><label>全国</label>
+                <div class="city"></div>
+                <a href="javascript:;" class="get_more_type">更多</a>
+                <div class="more_city"></div>
+            </li>
+            <li>
+                <span>学历要求：</span>
+                <input type="checkbox" class="first" name="education" value="" form="search_form"><label>不限</label>
+                <input type="checkbox" name="education" value="大专" form="search_form"><label>大专</label>
+                <input type="checkbox" name="education" value="本科" form="search_form"><label>本科</label>
+                <input type="checkbox" name="education" value="硕士" form="search_form"><label>硕士</label>
+                <input type="checkbox" name="education" value="博士" form="search_form"><label>博士</label>
+            </li>
+            <li>
+                <span>工作性质：</span>
+                <input type="checkbox" class="first" name="job_nature" value="" form="search_form"><label>不限</label>
+                <input type="checkbox" name="job_nature" value="全职" form="search_form"><label>全职</label>
+                <input type="checkbox" name="job_nature" value="兼职" form="search_form"><label>兼职</label>
+                <input type="checkbox" name="job_nature" value="实习" form="search_form"><label>实习</label>
+            </li>
+            <li>
+                <span>工作经验：</span>
+                <input type="checkbox" class="first" name="work_year" value="" form="search_form"><label>不限</label>
+                <input type="checkbox" name="work_year" value="应届毕业生" form="search_form"><label>应届毕业生</label>
+                <input type="checkbox" name="work_year" value="1-3年" form="search_form"><label>1-3年</label>
+                <input type="checkbox" name="work_year" value="3-5年" form="search_form"><label>3-5年</label>
+                <input type="checkbox" name="work_year" value="5-10年" form="search_form"><label>5-10年</label>
+                <input type="checkbox" name="work_year" value="10年以上" form="search_form"><label>10年以上</label>
+            </li>
+            <li>
+                <span>薪资要求：</span>
+                <input type="checkbox" class="first" name="salary" value="" form="search_form"><label>不限</label>
+                <input type="checkbox" name="salary" value="2-5" form="search_form"><label>2k-5k</label>
+                <input type="checkbox" name="salary" value="5-10" form="search_form"><label>5k-10k</label>
+                <input type="checkbox" name="salary" value="10-20" form="search_form"><label>10k-20k</label>
+                <input type="checkbox" name="salary" value="20-30" form="search_form"><label>20k-30k</label>
+                <input type="checkbox" name="salary" value="30-50" form="search_form"><label>30k-50k</label>
+                <input type="checkbox" name="salary" value="50" form="search_form"><label>50k以上</label>
+            </li>
+        </ul>
+    </div>
+    {% block position %}{% endblock %}
+    <script type="application/javascript">
+        function reload_filter() {
+            var request_get = {{ request_get|safe }};
+            for (var key in request_get) {
+                var values = request_get[key];
+                for (var index in values) {
+                    if (key == 'key_word') {
+                        $("input[name='key_word']").attr("value", values[index]);
+                    }
+                    else if (key == 'sort') {
+                        if (values[index] == '1') {
+                            $('.sort_bar a:eq(1)').click()
+                        }
+                        else {
+                            $('.sort_bar a:first').click()
+                        }
+                    }
+                    else {
+                        $("input[name='" + key + "'][value='" + values[index] + "']").prop('checked', true);
+                    }
+                }
+            }
+        }
+    </script>
+{% endblock %}

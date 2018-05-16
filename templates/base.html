@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/basic.css' %}"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/public.css' %}">
+    <script type="text/javascript" src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/public.js' %}"></script>
+    {% block extrastyle %}{% endblock %}
+</head>
+<body>
+<div class="header_bar">
+    <div class="header center">
+        <div class="fl"></div>
+        <div class="header_nav fr">
+            {% if request.session.username %}
+                欢迎您：<b>{{ request.session.username }}</b>
+                <span>|</span>
+                <a href="{% url 'user:logout' %}" id="logout">退出</a>
+            {% else %}
+                <a href="{% url 'user:login' %}">登录</a>
+                <span>|</span>
+                <a href="{% url 'user:register' %}">注册</a>
+            {% endif %}
+            <span>|</span>
+            <a href="{% url 'search:job' 1 %}">职位搜索</a>
+            <span>|</span>
+            <a href="{% url 'statistics:index' %}">数据分析</a>
+            <span>|</span>
+            <a href="{% url 'api:index' %}">数据接口</a>
+        </div>
+    </div>
+</div>
+<div>
+    {% block content %}{% endblock %}
+</div>
+<div class="footer">
+    <div>
+        <a href="#" class="footer_link">关于我们</a>
+        <span>|</span>
+        <a href="#" class="footer_link">联系我们</a>
+        <span>|</span>
+        <a href="#" class="footer_link">提供建议</a>
+        <span>|</span>
+        <a href="#" class="footer_link">友情链接</a>
+    </div>
+    <p>CopyRight © 2018 河南中医药大学信息技术学院 All Rights Reserved</p>
+    <p>电话：010-****888&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;豫ICP备*******5号</p>
+</div>
+{% block extra_script %}{% endblock %}
+</body>
+</html>

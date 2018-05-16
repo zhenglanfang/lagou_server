@@ -1,0 +1,37 @@
+{% extends "search_base.html" %}
+{% load static from staticfiles %}
+{% block title %}{{ company_name }}{% endblock %}
+{% block position %}
+    <div class="company_positions">
+        <h3>{{ company_name }}</h3>
+    </div>
+    {% include 'positions_list_include.html' %}
+    <div class="pagenation">
+    <span style="font-size: 11px;">{{ count }} 条  共 {{ num_pages }} 页</span>
+    {% if num_pages != 1 %}
+        {% if pages.has_previous %}
+            <a href="{% url 'search:company' company_name 1 %}?{{ request_params }}">首页</a>
+            <a href="{% url 'search:company' company_name page_now|add:'-1' %}?{{ request_params }}">上一页</a>
+        {% endif %}
+        {% for num in page_range %}
+            {% if num == page_now %}
+                <a href="{% url 'search:company' company_name num %}?{{ request_params }}" onclick="return false;" class="active">
+                    {{ num }}
+                </a>
+                {% comment %}{% elif num == 6%}
+                        <a href="javascript:;">...</a>{% endcomment %}
+            {% else %}
+                <a href="{% url 'search:company' company_name num %}?{{ request_params }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if pages.has_next %}
+            <a href="{% url 'search:company' company_name page_now|add:'1' %}?{{ request_params }}" page="{{ page_now|add:'1' }}">
+                下一页
+            </a>
+            <a href="{% url 'search:company' company_name num_pages %}?{{ request_params }}" page="{{ num_pages }}">
+                尾页
+            </a>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}
